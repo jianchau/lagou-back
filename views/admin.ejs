@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>document</title>
+    <%- include('templates/file')%>
+  </head>
+  <body>
+    <%- include('templates/header')%>
+    <div class="container-fluid">
+      <div class="row" id="content">
+        <%- include('templates/menu', {big:''})%>
+        <div class="main-right  col-9 ">
+          <div class="welcome">
+            欢迎登录lagou后台管理系统
+          </div>
+        </div> 
+      </div>
+    </div>
+  </body>
+</html>

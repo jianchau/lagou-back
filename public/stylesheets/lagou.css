@@ -1,0 +1,49 @@
+*{
+  margin:0;
+  padding:0;
+}
+  ul,li{
+    list-style:0;
+}
+a {
+  color: #00B7FF;
+}
+#registForm,#loginForm{
+  padding-top:60px;
+}
+.login-box,.register-box{
+  width:300px;
+  height:220px;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
+}
+#content{
+  overflow:hidden;
+}
+.nav-left{
+  padding-bottom:9999px;
+  margin-bottom:-9999px;
+}
+.nav-right{
+  padding-bottom:9999px;
+  margin-bottom:-9999px;
+}
+.welcome{
+  margin-top:200px;
+  margin-left:350px;
+}
+.nav-item a{
+  font-size: 16px;
+  color:black;
+}
+.nav-item a.active{
+  font-size: 25px;
+  color:blue;
+}
+.logo-img{
+  display:block;
+  width:100px;
+  height:100px;
+}
+

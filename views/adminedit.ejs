@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>document</title>
+    <%- include('templates/file')%>
+  </head>
+  <body>
+    <%- include('templates/header')%>
+    <div class="container-fluid">
+      <div class="row" id="content">
+        <%- include('templates/menu',{big:'first'})%>
+        <div class="main-right col-10 nav-right"> 
+          <%- include('templates/breadcrumb', {breadcru:[{link:'/admin',title:'首页'},{link:'/admin/postedit',title:'职位管理'}]})%>
+          <table class="table table-sm mb-5 table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">职位名称</th>
+                <th scope="col">公司名称</th>
+                <th scope="col">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% infos.forEach((v,i)=>{%>
+                <tr>
+                  <td><%= i+1%></td>
+                  <td><%= v.postName %></td>
+                  <td> <%= v.companyName %></td>
+                  <td>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/adminupdate/<%= v._id%>/page">编辑</a></button>
+                    <button type="button" id="remove-btn"  class="btn btn-danger btn-sm" )">删除</button>
+                  </td>
+                </tr>
+              <% })%>
+            </tbody>
+          </table>
+          <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" href="#">上一页</a></li>
+              <% for(i=(page-3>=1?page-3:1);i<=(page_count>=page+3?page+3:page_count);i++) {%>
+                <% if(i===page) {%>
+                  <li class="page-item active"><a class="page-link" href="/adminedit/<%= i %>"><%= i %></a></li>
+                <%} else {%>
+                  <li class="page-item "><a class="page-link" href="/adminedit/<%= i %>"><%= i %></a></li>
+                <% }%>
+              <% }%>
+              <li class="page-item "><a class="page-link" href="#">下一页</a></li>
+            </ul>
+          </nav>
+        </div> 
+      </div>
+    </div>
+    <script>
+    </script>
+  </body>
+</html>
